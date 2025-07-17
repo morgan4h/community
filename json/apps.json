@@ -1,0 +1,247 @@
+[
+  {
+    "id": 1,
+    "name": "TaskFlow Pro",
+    "img": "https://placehold.co/150x150/007bff/ffffff?text=TaskFlow",
+    "bio": "Your ultimate productivity companion for managing tasks and projects.",
+    "link_for_download": "https://example.com/taskflow-pro-download",
+    "video_link": "https://www.youtube.com/watch?v=taskflow_overview",
+    "picture_links": [
+      "https://placehold.co/600x400/007bff/ffffff?text=TaskFlow+Screenshot+1",
+      "https://placehold.co/600x400/007bff/ffffff?text=TaskFlow+Screenshot+2",
+      "https://placehold.co/600x400/007bff/ffffff?text=TaskFlow+Screenshot+3"
+    ],
+    "about_app": "TaskFlow Pro is a comprehensive task management application designed to help individuals and teams organize their work efficiently. It features intuitive drag-and-drop interfaces, customizable workflows, and real-time collaboration tools. Whether you're planning a personal project or coordinating a large team effort, TaskFlow Pro provides the tools you need to stay on track and achieve your goals.",
+    "description_short": "Efficient task and project management with collaboration features.",
+    "fetcher_in_the_app": "Cloud synchronization, API integrations for third-party services (e.g., calendar, email).",
+    "price": "free"
+  },
+  {
+    "id": 2,
+    "name": "AstroExplorer VR",
+    "img": "https://placehold.co/150x150/6f42c1/ffffff?text=AstroVR",
+    "bio": "Embark on an immersive virtual reality journey through the cosmos.",
+    "link_for_download": "https://example.com/astroexplorer-vr-download",
+    "video_link": "https://www.youtube.com/watch?v=astroexplorer_trailer",
+    "picture_links": [
+      "https://placehold.co/600x400/6f42c1/ffffff?text=AstroVR+Screenshot+1",
+      "https://placehold.co/600x400/6f42c1/ffffff?text=AstroVR+Screenshot+2",
+      "https://placehold.co/600x400/6f42c1/ffffff?text=AstroVR+Screenshot+3"
+    ],
+    "about_app": "AstroExplorer VR offers an unparalleled virtual reality experience, allowing users to explore distant galaxies, planets, and celestial phenomena from the comfort of their home. With stunning visuals and interactive elements, it's perfect for astronomy enthusiasts and curious minds alike. Discover facts about cosmic bodies, witness nebulae up close, and navigate through asteroid fields in this educational and entertaining VR app.",
+    "description_short": "Immersive VR experience for exploring space and celestial bodies.",
+    "fetcher_in_the_app": "Real-time astronomical data (e.g., star positions, planet orbits), dynamic content loading for new discoveries.",
+    "price": "paid"
+  },
+  {
+    "id": 3,
+    "name": "FitLife Coach",
+    "img": "https://placehold.co/150x150/28a745/ffffff?text=FitLife",
+    "bio": "Your personalized fitness and nutrition guide for a healthier lifestyle.",
+    "link_for_download": "https://example.com/fitlife-coach-download",
+    "video_link": "https://www.youtube.com/watch?v=fitlife_intro",
+    "picture_links": [
+      "https://placehold.co/600x400/28a745/ffffff?text=FitLife+Screenshot+1",
+      "https://placehold.co/600x400/28a745/ffffff?text=FitLife+Screenshot+2",
+      "https://placehold.co/600x400/28a745/ffffff?text=FitLife+Screenshot+3"
+    ],
+    "about_app": "FitLife Coach is an AI-powered personal trainer and nutritionist in your pocket. It creates customized workout plans, tracks your progress, and suggests healthy meal options based on your dietary preferences and fitness goals. With a vast library of exercises and recipes, FitLife Coach empowers you to take control of your health journey and achieve sustainable results.",
+    "description_short": "Personalized fitness and nutrition plans with AI guidance.",
+    "fetcher_in_the_app": "User health data (e.g., steps, calories, heart rate), exercise video tutorials, recipe databases.",
+    "price": "free"
+  },
+  {
+    "id": 4,
+    "name": "Melody Maker Studio",
+    "img": "https://placehold.co/150x150/ffc107/343a40?text=Melody",
+    "bio": "Create, mix, and master your own music with intuitive tools.",
+    "link_for_download": "https://example.com/melody-maker-studio-download",
+    "video_link": "https://www.youtube.com/watch?v=melody_maker_demo",
+    "picture_links": [
+      "https://placehold.co/600x400/ffc107/343a40?text=Melody+Screenshot+1",
+      "https://placehold.co/600x400/ffc107/343a40?text=Melody+Screenshot+2",
+      "https://placehold.co/600x400/ffc107/343a40?text=Melody+Screenshot+3"
+    ],
+    "about_app": "Melody Maker Studio is a powerful yet easy-to-use digital audio workstation (DAW) for aspiring and professional musicians. It provides a wide array of virtual instruments, effects, and mixing tools to bring your musical ideas to life. Record vocals, program beats, arrange melodies, and share your creations with the world. Its user-friendly interface makes music production accessible to everyone.",
+    "description_short": "Digital audio workstation for music creation, mixing, and mastering.",
+    "fetcher_in_the_app": "Sound sample libraries, virtual instrument presets, cloud storage for projects.",
+    "price": "paid"
+  },
+  {
+    "id": 5,
+    "name": "EcoConnect Community",
+    "img": "https://placehold.co/150x150/17a2b8/ffffff?text=EcoConnect",
+    "bio": "Connect with local environmental initiatives and make a difference.",
+    "link_for_download": "https://example.com/ecoconnect-community-download",
+    "video_link": "https://www.youtube.com/watch?v=ecoconnect_promo",
+    "picture_links": [
+      "https://placehold.co/600x400/17a2b8/ffffff?text=EcoConnect+Screenshot+1",
+      "https://placehold.co/600x400/17a2b8/ffffff?text=EcoConnect+Screenshot+2",
+      "https://placehold.co/600x400/17a2b8/ffffff?text=EcoConnect+Screenshot+3"
+    ],
+    "about_app": "EcoConnect Community is a platform dedicated to fostering local environmental action. It helps users discover nearby eco-friendly events, volunteer opportunities, and sustainable businesses. Share your own green initiatives, find like-minded individuals, and contribute to a healthier planet. From recycling drives to community gardens, EcoConnect empowers you to be a part of the solution.",
+    "description_short": "Connects users with local environmental events and initiatives.",
+    "fetcher_in_the_app": "Location-based event listings, user-generated content (e.g., posts, photos), environmental news feeds.",
+    "price": "free"
+  },
+  {
+    "id": 6,
+    "name": "CodeCraft IDE",
+    "img": "https://placehold.co/150x150/000000/00ff00?text=CodeCraft",
+    "bio": "A lightweight and powerful IDE for web development.",
+    "link_for_download": "https://example.com/codecraft-ide-download",
+    "video_link": "https://www.youtube.com/watch?v=codecraft_intro",
+    "picture_links": [
+      "https://placehold.co/600x400/000000/00ff00?text=CodeCraft+Screenshot+1",
+      "https://placehold.co/600x400/000000/00ff00?text=CodeCraft+Screenshot+2"
+    ],
+    "about_app": "CodeCraft IDE provides a streamlined environment for developers, offering syntax highlighting, integrated terminal, and live preview features. It supports multiple programming languages and frameworks, making it ideal for rapid prototyping and efficient coding.",
+    "description_short": "Lightweight IDE with live preview and multi-language support.",
+    "fetcher_in_the_app": "Code snippets library, package manager integration, cloud sync for projects.",
+    "price": "paid"
+  },
+  {
+    "id": 7,
+    "name": "RecipeGenius AI",
+    "img": "https://placehold.co/150x150/dc3545/ffffff?text=RecipeAI",
+    "bio": "AI-powered recipe generator based on your available ingredients.",
+    "link_for_download": "https://example.com/recipegenius-ai-download",
+    "video_link": "https://www.youtube.com/watch?v=recipegenius_demo",
+    "picture_links": [
+      "https://placehold.co/600x400/dc3545/ffffff?text=RecipeAI+Screenshot+1",
+      "https://placehold.co/600x400/dc3545/ffffff?text=RecipeAI+Screenshot+2"
+    ],
+    "about_app": "RecipeGenius AI takes the guesswork out of cooking. Simply input the ingredients you have on hand, and it will generate delicious recipes tailored to your preferences and dietary needs. Save your favorite recipes, create shopping lists, and discover new culinary delights.",
+    "description_short": "Generates recipes from ingredients using AI, with meal planning.",
+    "fetcher_in_the_app": "Ingredient database, user recipe submissions, nutritional information API.",
+    "price": "free"
+  },
+  {
+    "id": 8,
+    "name": "Mindful Meditations",
+    "img": "https://placehold.co/150x150/fd7e14/ffffff?text=Mindful",
+    "bio": "Guided meditation and mindfulness exercises for daily well-being.",
+    "link_for_download": "https://example.com/mindful-meditations-download",
+    "video_link": "https://www.youtube.com/watch?v=mindful_overview",
+    "picture_links": [
+      "https://placehold.co/600x400/fd7e14/ffffff?text=Mindful+Screenshot+1",
+      "https://placehold.co/600x400/fd7e14/ffffff?text=Mindful+Screenshot+2"
+    ],
+    "about_app": "Mindful Meditations offers a serene space for mental clarity and stress reduction. Access a library of guided meditations, soothing sounds, and breathing exercises. Track your progress and integrate mindfulness into your daily routine for improved focus and emotional balance.",
+    "description_short": "Guided meditations and soundscapes for stress relief and focus.",
+    "fetcher_in_the_app": "Audio meditation tracks, progress tracking data, daily mindfulness tips.",
+    "price": "paid"
+  },
+  {
+    "id": 9,
+    "name": "TravelBuddy Planner",
+    "img": "https://placehold.co/150x150/6610f2/ffffff?text=TravelBuddy",
+    "bio": "Plan your perfect trip with personalized itineraries and recommendations.",
+    "link_for_download": "https://example.com/travelbuddy-planner-download",
+    "video_link": "https://www.youtube.com/watch?v=travelbuddy_tour",
+    "picture_links": [
+      "https://placehold.co/600x400/6610f2/ffffff?text=TravelBuddy+Screenshot+1",
+      "https://placehold.co/600x400/6610f2/ffffff?text=TravelBuddy+Screenshot+2"
+    ],
+    "about_app": "TravelBuddy Planner helps you organize every detail of your next adventure. Create custom itineraries, discover local attractions, find the best deals on flights and accommodation, and share your plans with friends. Explore the world with confidence and ease.",
+    "description_short": "Personalized trip planning, itinerary creation, and travel deals.",
+    "fetcher_in_the_app": "Flight and hotel APIs, points of interest data, user travel reviews.",
+    "price": "free"
+  },
+  {
+    "id": 10,
+    "name": "HomeGarden Helper",
+    "img": "https://placehold.co/150x150/20c997/ffffff?text=Garden",
+    "bio": "Your digital assistant for nurturing healthy plants and gardens.",
+    "link_for_download": "https://example.com/homegarden-helper-download",
+    "video_link": "https://www.youtube.com/watch?v=gardenhelper_guide",
+    "picture_links": [
+      "https://placehold.co/600x400/20c997/ffffff?text=Garden+Screenshot+1",
+      "https://placehold.co/600x400/20c997/ffffff?text=Garden+Screenshot+2"
+    ],
+    "about_app": "HomeGarden Helper provides essential information and reminders for plant care. Identify plants, get watering schedules, pest control tips, and even diagnose plant diseases. Grow a thriving garden with expert advice at your fingertips.",
+    "description_short": "Plant care guide, watering reminders, and disease diagnosis.",
+    "fetcher_in_the_app": "Plant species database, weather data for watering, gardening tips articles.",
+    "price": "paid"
+  },
+  {
+    "id": 11,
+    "name": "LanguageLink Pro",
+    "img": "https://placehold.co/150x150/6f42c1/ffffff?text=LangLink",
+    "bio": "Master new languages with interactive lessons and native speaker chats.",
+    "link_for_download": "https://example.com/languagelink-pro-download",
+    "video_link": "https://www.youtube.com/watch?v=languagelink_features",
+    "picture_links": [
+      "https://placehold.co/600x400/6f42c1/ffffff?text=LangLink+Screenshot+1",
+      "https://placehold.co/600x400/6f42c1/ffffff?text=LangLink+Screenshot+2"
+    ],
+    "about_app": "LanguageLink Pro offers a dynamic way to learn new languages. Engage in interactive lessons, practice with AI conversation partners, and connect with native speakers for real-time practice. Track your vocabulary and grammar progress and achieve fluency faster.",
+    "description_short": "Interactive language learning with AI and native speaker chats.",
+    "fetcher_in_the_app": "Vocabulary lists, grammar exercises, real-time chat APIs.",
+    "price": "free"
+  },
+  {
+    "id": 12,
+    "name": "PhotoEditor Pro",
+    "img": "https://placehold.co/150x150/ffc107/343a40?text=PhotoEdit",
+    "bio": "Professional photo editing tools with intuitive interface.",
+    "link_for_download": "https://example.com/photoeditor-pro-download",
+    "video_link": "https://www.youtube.com/watch?v=photoeditor_tutorial",
+    "picture_links": [
+      "https://placehold.co/600x400/ffc107/343a40?text=PhotoEdit+Screenshot+1",
+      "https://placehold.co/600x400/ffc107/343a40?text=PhotoEdit+Screenshot+2"
+    ],
+    "about_app": "PhotoEditor Pro provides a comprehensive suite of tools for enhancing your images. From basic adjustments like brightness and contrast to advanced features like layer support and selective editing, unleash your creativity and transform your photos into masterpieces.",
+    "description_short": "Advanced photo editing with layers and selective adjustments.",
+    "fetcher_in_the_app": "Filter presets, stock image integration, cloud storage for projects.",
+    "price": "paid"
+  },
+  {
+    "id": 13,
+    "name": "BudgetBuddy Finance",
+    "img": "https://placehold.co/150x150/28a745/ffffff?text=Budget",
+    "bio": "Track your expenses and manage your personal finances effortlessly.",
+    "link_for_download": "https://example.com/budgetbuddy-finance-download",
+    "video_link": "https://www.youtube.com/watch?v=budgetbuddy_guide",
+    "picture_links": [
+      "https://placehold.co/600x400/28a745/ffffff?text=Budget+Screenshot+1",
+      "https://placehold.co/600x400/28a745/ffffff?text=Budget+Screenshot+2"
+    ],
+    "about_app": "BudgetBuddy Finance helps you stay on top of your money. Categorize expenses, set budgets, track your spending habits, and visualize your financial health with insightful reports. Achieve your financial goals with smart money management.",
+    "description_short": "Expense tracking, budgeting, and financial reporting.",
+    "fetcher_in_the_app": "Bank account synchronization (mock), transaction categorization, financial news.",
+    "price": "free"
+  },
+  {
+    "id": 14,
+    "name": "StoryWeaver Writer",
+    "img": "https://placehold.co/150x150/17a2b8/ffffff?text=Story",
+    "bio": "A creative writing companion for authors and storytellers.",
+    "link_for_download": "https://example.com/storyweaver-writer-download",
+    "video_link": "https://www.youtube.com/watch?v=storyweaver_intro",
+    "picture_links": [
+      "https://placehold.co/600x400/17a2b8/ffffff?text=Story+Screenshot+1",
+      "https://placehold.co/600x400/17a2b8/ffffff?text=Story+Screenshot+2"
+    ],
+    "about_app": "StoryWeaver Writer provides tools to help you craft compelling narratives. Organize your plot points, develop characters, build worlds, and write your manuscript with a distraction-free interface. From outlines to final drafts, bring your stories to life.",
+    "description_short": "Creative writing tools for plot, character, and world-building.",
+    "fetcher_in_the_app": "Writing prompts, character name generator, cloud sync for drafts.",
+    "price": "paid"
+  },
+  {
+    "id": 15,
+    "name": "GameHub Launcher",
+    "img": "https://placehold.co/150x150/007bff/ffffff?text=GameHub",
+    "bio": "Organize and launch all your PC games from one central place.",
+    "link_for_download": "https://example.com/gamehub-launcher-download",
+    "video_link": "https://www.youtube.com/watch?v=gamehub_overview",
+    "picture_links": [
+      "https://placehold.co/600x400/007bff/ffffff?text=GameHub+Screenshot+1",
+      "https://placehold.co/600x400/007bff/ffffff?text=GameHub+Screenshot+2"
+    ],
+    "about_app": "GameHub Launcher simplifies your gaming experience by consolidating all your games from various platforms into one sleek interface. Launch games, track playtime, discover new titles, and connect with friends. Your ultimate gaming library manager.",
+    "description_short": "Centralized game launcher, library management, and playtime tracking.",
+    "fetcher_in_the_app": "Game metadata (covers, descriptions), game news feeds, platform integrations (mock).",
+    "price": "free"
+  }
+]

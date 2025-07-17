@@ -1,0 +1,303 @@
+  * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto', Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f5f5f5;
+            color: #202124;
+            line-height: 1.5;
+        }
+
+        /* Header */
+        .play-header {
+            display: flex;
+            align-items: center;
+            padding: 12px 24px;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .play-header img {
+            height: 28px;
+        }
+
+        .play-nav {
+            display: flex;
+            gap: 24px;
+            margin-left: 32px;
+            font-size: 14px;
+            font-weight: 500;
+            color: #5f6368;
+        }
+
+        .play-nav span {
+            cursor: pointer;
+            transition: color 0.2s;
+        }
+
+        .play-nav span:hover {
+            color: #01875f;
+        }
+
+        /* App Container */
+        .app-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 24px;
+        }
+
+        .app-header {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 24px;
+            margin-bottom: 24px;
+        }
+
+        .app-icon {
+            width: 100px;
+            height: 100px;
+            border-radius: 20px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .app-title-section {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .app-title {
+            font-size: 28px;
+            font-weight: 500;
+            margin-bottom: 8px;
+        }
+
+        .app-subtitle {
+            font-size: 16px;
+            color: #5f6368;
+            margin-bottom: 12px;
+        }
+
+        .app-badges {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 12px;
+        }
+
+        .badge {
+            background-color: #e8eaed;
+            padding: 6px 12px;
+            border-radius: 16px;
+            font-size: 12px;
+            font-weight: 500;
+            color: #3c4043;
+        }
+
+        .rating-section {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+            color: #3c4043;
+        }
+
+        .rating-value {
+            font-size: 20px;
+            font-weight: 700;
+            color: #202124;
+        }
+
+        .stars {
+            color: #01875f;
+        }
+
+        .install-btn {
+            background-color: #01875f;
+            color: #fff;
+            border: none;
+            padding: 12px 32px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background-color 0.2s, transform 0.1s;
+        }
+
+        .install-btn:hover {
+            background-color: #016d4f;
+            transform: translateY(-1px);
+        }
+
+        .install-btn:active {
+            transform: translateY(0);
+        }
+
+        /* Stats Section */
+        .stats-section {
+            display: flex;
+            justify-content: space-between;
+            max-width: 400px;
+            margin-bottom: 24px;
+            padding: 16px;
+            background-color: #fff;
+            border-radius: 12px;
+                visibility: hidden;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .stat {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .stat-value {
+            font-size: 16px;
+            font-weight: 700;
+            color: #202124;
+        }
+
+        .stat-label {
+            font-size: 12px;
+            color: #5f6368;
+        }
+
+        /* Screenshots */
+        .screenshots {
+            display: flex;
+            overflow-x: auto;
+            gap: 12px;
+            padding: 16px 0;
+            scrollbar-width: thin;
+            scrollbar-color: #dadce0 transparent;
+        }
+
+        .screenshots::-webkit-scrollbar {
+            height: 8px;
+        }
+
+        .screenshots::-webkit-scrollbar-thumb {
+            background-color: #dadce0;
+            border-radius: 4px;
+        }
+
+        .screenshot {
+            width: 180px;
+            height: 360px;
+            object-fit: cover;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s;
+        }
+
+        .screenshot:hover {
+            transform: scale(1.05);
+        }
+
+        /* About Section */
+        .about-section {
+            background-color: #fff;
+            padding: 24px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            margin-top: 24px;
+        }
+
+        .about-section h3 {
+            font-size: 20px;
+            font-weight: 500;
+            margin-bottom: 16px;
+        }
+
+        .about-section h4 {
+            font-size: 16px;
+            font-weight: 500;
+            margin: 16px 0 8px;
+        }
+
+        .about-section p {
+            font-size: 14px;
+            color: #3c4043;
+            margin-bottom: 16px;
+        }
+
+        .about-section ul {
+            list-style-type: disc;
+            padding-left: 24px;
+            font-size: 14px;
+            color: #3c4043;
+        }
+
+        .about-section li {
+            margin-bottom: 8px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .app-container {
+                padding: 16px;
+            }
+
+            .app-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .app-icon {
+                width: 80px;
+                height: 80px;
+            }
+
+            .app-title {
+                font-size: 24px;
+            }
+
+            .install-btn {
+                width: 100%;
+                text-align: center;
+            }
+
+            .stats-section {
+                flex-wrap: wrap;
+                gap: 16px;
+            }
+
+            .screenshot {
+                width: 150px;
+                height: 300px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .play-header {
+                padding: 12px;
+            }
+
+            .play-nav {
+                gap: 16px;
+                margin-left: 16px;
+            }
+
+            .app-title {
+                font-size: 20px;
+            }
+
+            .app-subtitle {
+                font-size: 14px;
+            }
+
+            .screenshot {
+                width: 120px;
+                height: 240px;
+            }
+        }
+
+        footer {
+            text-align: center;
+        }
