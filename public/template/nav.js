@@ -13,7 +13,7 @@ const footer = `   <div class="footer-container">
                 <h4>Handy Links</h4>
                 <div class="footer-item">Home</div>
                 <div class="footer-item">Contact</div>
-                <div class="footer-item">Help</div>
+                <div class="footer-item">Upload</div>
                 <div class="footer-item">Feedback</div>
             </div>
             <div class="footer-section">

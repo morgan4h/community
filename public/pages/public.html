@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>insert</title>
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            flex-direction: column;
+            line-height: 3;
+        }
+
+        body input {
+            line-height: 2;
+            margin: 10px 10px;
+        }
+    </style>
+  </head>
+  <body>
+    <h1>insert data</h1>
+    <input type="text" placeholder="name" />
+    <input type="file" placeholder="img" />
+    <input type="text" placeholder="res1" />
+    <input type="text" placeholder="res2" />
+    <input type="text" placeholder="res3" />
+    <input type="text" placeholder="about the app">
+    <input type="text" placeholder="description short">
+    <textarea name=""  id="">Fetch in the app : (type below)</textarea>
+    <input type="text" placeholder="price">
+    <input type="text" placeholder="download link">
+    <button>send</button>
+    <script>
+        document.querySelector('button').onclick = function() {
+            let allInput = document.querySelectorAll('input')
+            for(let i = 0; i < allInput.length; i++) {
+               fetch('/p', {
+                method : "POST",
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    [allInput.placeholder] : [allInput[i].value]
+                })
+               })
+            }
+        }
+    </script>
+  </body>
+</html>
