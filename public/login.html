@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login - AppStore</title>
+  <link rel="stylesheet" href="../css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="container nav">
+      <h1 class="logo">AppStore</h1>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="upload.html">Upload</a></li>
+          <li><a href="login.html">Login</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Login Form Section -->
+  <section class="app-detail">
+    <div class="container app-detail-container">
+      <div class="app-detail-info">
+        <h2>🔐 Login to AppStore</h2>
+        <p class="description">Access your developer dashboard and manage your apps.</p>
+
+        <form class="upload-form" action="#" method="post">
+          <div class="form-group">
+            <label for="email">Email or Username</label>
+            <input type="text" id="email" name="email" required />
+          </div>
+
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required />
+          </div>
+
+          <button type="submit" class="btn primary download-btn">Login</button>
+
+          <p style="margin-top: 15px;">Don't have an account? <a href="#">Register</a></p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>

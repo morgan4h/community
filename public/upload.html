@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Upload App - AppStore</title>
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/upload.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="container nav">
+      <h1 class="logo">AppStore</h1>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="#">Categories</a></li>
+          <li><a href="#">Top Charts</a></li>
+          <li><a href="upload.html">Upload</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Upload Section -->
+  <section class="app-detail">
+    <div class="container app-detail-container">
+      <div class="app-detail-info">
+        <h2>📤 Upload New App</h2>
+        <p class="description">Submit your app to AppStore. Make sure all fields are filled correctly.</p>
+
+        <form class="upload-form" action="#" method="post" enctype="multipart/form-data">
+          <div class="form-group">
+            <label for="appName">App Name</label>
+            <input type="text" id="appName" name="appName" required />
+          </div>
+
+          <div class="form-group">
+            <label for="appCategory">Category</label>
+            <input type="text" id="appCategory" name="appCategory" required />
+          </div>
+
+          <div class="form-group">
+            <label for="appDescription">Description</label>
+            <textarea id="appDescription" name="appDescription" rows="4" required></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="appVersion">Version</label>
+            <input type="text" id="appVersion" name="appVersion" required />
+          </div>
+
+          <div class="form-group">
+            <label for="appSize">Size (MB)</label>
+            <input type="number" id="appSize" name="appSize" step="0.1" required />
+          </div>
+
+          <div class="form-group">
+            <label for="appIcon">App Icon (PNG/JPG)</label>
+            <input type="file" id="appIcon" name="appIcon" accept="image/*" required />
+          </div>
+
+          <div class="form-group">
+            <label for="appFile">App File (APK)</label>
+            <input type="file" id="appFile" name="appFile" accept=".apk" required />
+          </div>
+
+          <button type="submit" class="btn primary download-btn">Upload App</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>
+
+
