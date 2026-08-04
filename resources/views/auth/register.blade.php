@@ -1,52 +1,287 @@
-<x-guest-layout>
-    <form method="POST" action="{{ route('register') }}">
-        @csrf
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join TMK 4H Community</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:Arial, Helvetica, sans-serif;
+        }
 
-        <!-- Name -->
-        <div>
-            <x-input-label for="name" :value="__('Name')" />
-            <x-text-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
-            <x-input-error :messages="$errors->get('name')" class="mt-2" />
+        body{
+            min-height:100vh;
+            background:
+            linear-gradient(rgba(0,0,0,.78), rgba(0,0,0,.92)),
+            radial-gradient(circle at top, #1b1b1b, #050505 70%);
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            color:white;
+            padding:120px 20px 80px;
+            overflow-y:auto;
+        }
+
+        /* LOGO */
+        .logo{
+            position:absolute;
+            top:35px;
+            left:45px;
+            color:#168cff;
+            font-size:38px;
+            font-weight:900;
+            letter-spacing:-2px;
+            line-height:.9;
+        }
+
+        .community{
+            display:block;
+            color:#aaa;
+            font-size:14px;
+            letter-spacing:3px;
+            font-weight:500;
+            margin-left:4px;
+            margin-bottom:6px;
+        }
+
+        /* JOIN BOX */
+        .join-box{
+            width:480px;
+            max-width:100%;
+            padding:45px;
+            background:rgba(15,15,15,.88);
+            border-radius:12px;
+            box-shadow: 0 20px 60px rgba(0,0,0,.8);
+        }
+
+        .join-box h1{
+            font-size:32px;
+            margin-bottom:25px;
+        }
+
+        /* INPUTS */
+        .input, select{
+            width:100%;
+            padding:15px;
+            margin-bottom:15px;
+            border-radius:5px;
+            border:1px solid #444;
+            background:#222;
+            color:white;
+            font-size:15px;
+        }
+
+        .input::placeholder{
+            color:#888;
+        }
+
+        .input:focus, select:focus{
+            outline:none;
+            border-color:#168cff;
+        }
+
+        select{
+            cursor:pointer;
+        }
+
+        select option{
+            background:#222;
+            color:white;
+        }
+
+        /* ERROR MESSAGES */
+        .error-msg {
+            color: #ff4d4d;
+            font-size: 13px;
+            margin-top: -10px;
+            margin-bottom: 12px;
+            display: block;
+        }
+
+        /* INTERESTS */
+        .interest-title{
+            color:#aaa;
+            font-size:14px;
+            margin:15px 0 12px;
+        }
+
+        .interests{
+            display:grid;
+            grid-template-columns:repeat(2,1fr);
+            gap:10px;
+        }
+
+        .interest{
+            padding:10px;
+            background:#222;
+            border:1px solid #333;
+            border-radius:6px;
+            color:#ddd;
+            cursor:pointer;
+        }
+
+        .interest input{
+            accent-color:#168cff;
+        }
+
+        /* BUTTON */
+        button{
+            width:100%;
+            margin-top:25px;
+            padding:15px;
+            border:none;
+            border-radius:5px;
+            background:#168cff;
+            color:white;
+            font-size:17px;
+            font-weight:bold;
+            cursor:pointer;
+            transition:.3s;
+        }
+
+        button:hover{
+            background:#006fe6;
+        }
+
+        /* LOGIN */
+        .login{
+            margin-top:25px;
+            text-align:center;
+            color:#aaa;
+        }
+
+        .login a{
+            color:white;
+            text-decoration:none;
+        }
+
+        .login a:hover{
+            color:#168cff;
+        }
+
+        /* FOOTER */
+        .footer{
+            position:fixed;
+            bottom:15px;
+            left:0;
+            width:100%;
+            text-align:center;
+            color:#777;
+            font-size:13px;
+        }
+
+        /* MEDIA QUERIES */
+        @media(max-width:768px){
+            .logo{ top:25px; left:30px; font-size:34px; }
+            .join-box{ width:90%; padding:40px; }
+        }
+
+        @media(max-width:500px){
+            body{ padding:100px 15px 70px; align-items:flex-start; }
+            .logo{ top:20px; left:20px; font-size:30px; }
+            .community{ font-size:11px; }
+            .join-box{ width:100%; max-width:380px; padding:30px 22px; margin-top:20px; }
+            .join-box h1{ font-size:26px; }
+            .input, select{ padding:14px; }
+            .interests{ grid-template-columns:1fr; }
+            button{ padding:14px; }
+            .footer{ font-size:11px; bottom:8px; }
+        }
+
+        @media(max-width:360px){
+            .logo{ font-size:26px; }
+            .join-box{ padding:25px 18px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="logo">
+        <span class="community">community</span>
+        TMK 4H
+    </div>
+
+    <div class="join-box">
+        <h1>Create Account</h1>
+
+        <!-- 1. POST ACTION & CSRF PROTECTION -->
+        <form method="POST" action="{{ route('register') }}">
+            @csrf
+
+            <!-- Name Field -->
+            <input class="input" type="text" name="name" value="{{ old('name') }}" placeholder="Full name" required autofocus>
+            @error('name')
+                <span class="error-msg">{{ $message }}</span>
+            @enderror
+
+            <!-- Email Field -->
+            <input class="input" type="email" name="email" value="{{ old('email') }}" placeholder="Email address" required>
+            @error('email')
+                <span class="error-msg">{{ $message }}</span>
+            @enderror
+
+            <!-- Password Field -->
+            <input class="input" type="password" name="password" placeholder="Password" required autocomplete="new-password">
+            @error('password')
+                <span class="error-msg">{{ $message }}</span>
+            @enderror
+
+            <!-- Confirm Password Field (Required by Breeze) -->
+            <input class="input" type="password" name="password_confirmation" placeholder="Confirm Password" required autocomplete="new-password">
+            @error('password_confirmation')
+                <span class="error-msg">{{ $message }}</span>
+            @enderror
+
+            <!-- Nationality -->
+            <select class="input" name="nationality">
+                <option value="">Select nationality</option>
+                <option value="Algeria">Algeria</option>
+                <option value="Morocco">Morocco</option>
+                <option value="Saudi Arabia">Saudi Arabia</option>
+                <option value="United States">United States</option>
+                <option value="Other">Other</option>
+            </select>
+
+            <!-- Date of Birth -->
+            <input class="input" type="date" name="dob">
+
+            <!-- Gender -->
+            <select class="input" name="gender">
+                <option value="">Select gender</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+            </select>
+
+            <div class="interest-title">Choose your interests (optional)</div>
+
+            <div class="interests">
+                <label class="interest"><input type="checkbox" name="interests[]" value="Action"> #Action</label>
+                <label class="interest"><input type="checkbox" name="interests[]" value="Movies"> #Movies</label>
+                <label class="interest"><input type="checkbox" name="interests[]" value="Sport"> #Sport</label>
+                <label class="interest"><input type="checkbox" name="interests[]" value="Gaming"> #Gaming</label>
+                <label class="interest"><input type="checkbox" name="interests[]" value="Music"> #Music</label>
+                <label class="interest"><input type="checkbox" name="interests[]" value="Anime"> #Anime</label>
+                <label class="interest"><input type="checkbox" name="interests[]" value="Technology"> #Technology</label>
+                <label class="interest"><input type="checkbox" name="interests[]" value="Travel"> #Travel</label>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit">Join Community</button>
+        </form>
+
+        <div class="login">
+            Already a member?
+            <a href="{{ route('login') }}">Sign In</a>
         </div>
+    </div>
 
-        <!-- Email Address -->
-        <div class="mt-4">
-            <x-input-label for="email" :value="__('Email')" />
-            <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autocomplete="username" />
-            <x-input-error :messages="$errors->get('email')" class="mt-2" />
-        </div>
+    <div class="footer">
+        © 2026 TMK 4H Community. All rights reserved.
+    </div>
 
-        <!-- Password -->
-        <div class="mt-4">
-            <x-input-label for="password" :value="__('Password')" />
-
-            <x-text-input id="password" class="block mt-1 w-full"
-                            type="password"
-                            name="password"
-                            required autocomplete="new-password" />
-
-            <x-input-error :messages="$errors->get('password')" class="mt-2" />
-        </div>
-
-        <!-- Confirm Password -->
-        <div class="mt-4">
-            <x-input-label for="password_confirmation" :value="__('Confirm Password')" />
-
-            <x-text-input id="password_confirmation" class="block mt-1 w-full"
-                            type="password"
-                            name="password_confirmation" required autocomplete="new-password" />
-
-            <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
-        </div>
-
-        <div class="flex items-center justify-end mt-4">
-            <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('login') }}">
-                {{ __('Already registered?') }}
-            </a>
-
-            <x-primary-button class="ms-4">
-                {{ __('Register') }}
-            </x-primary-button>
-        </div>
-    </form>
-</x-guest-layout>
+</body>
+</html>
