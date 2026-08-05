@@ -487,7 +487,7 @@ TMK 4H
 
 <a href="#">Anime</a>
 
-<a href="#">Profile</a>
+<a href="/pr">Profile</a>
 
 </div>
 
@@ -498,44 +498,29 @@ TMK 4H
 
 
 
-
 <section class="hero">
-
-
 <div class="hero-content">
 
-
 <h1>
-The Last Match
+{{ $notification->notification_name ?? 'Default Title' }}
 </h1>
 
-
 <p>
-Tonight's hottest live football match and trending shows in TMK 4H Community.
+{{ $notification->notification_description ?? 'Default Description' }}
 </p>
 
-
 <div class="buttons">
+    <a href="{{ $notification->notification_attr ?? '#' }}" class="btn watch" style="text-decoration: none; display: inline-block;">
+        ▶ Watch Now
+    </a>
 
-<button class="btn watch">
-▶ Watch Now
-</button>
-
-
-<button class="btn info">
-More Info
-</button>
-
-
+    <button class="btn info">
+        More Info
+    </button>
 </div>
 
-
 </div>
-
-
 </section>
-
-
 
 
 
