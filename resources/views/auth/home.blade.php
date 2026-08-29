@@ -3,15 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Home</title>
 </head>
 <body>
-    <h1>Home Page</h1>
+
+    <h1>Welcome, {{ $user->name }}!</h1>
+
     <div class="live-football">
-        <i>create live stream of football</i>
+        <i>Create live stream of football</i>
     </div>
+
     <div class="movie">
-        <p>put here movie of v for vendatai</p>
+        <p>Put here movie of V for Vendetta</p>
     </div>
+
+    <form action="/logout" method="POST">
+        @csrf
+
+        <button type="submit">
+            Logout
+        </button>
+    </form>
+
 </body>
 </html>
