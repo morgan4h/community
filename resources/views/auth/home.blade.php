@@ -6,10 +6,12 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="/name" method="post">
-        <h1>send your name</h1>
-        <input name="name" type="text">
-        <button>send</button>
-    </form>
+    <h1>Home Page</h1>
+    <div class="live-football">
+        <i>create live stream of football</i>
+    </div>
+    <div class="movie">
+        <p>put here movie of v for vendatai</p>
+    </div>
 </body>
 </html>
