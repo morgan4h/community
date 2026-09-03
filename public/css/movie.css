@@ -1,0 +1,212 @@
+:root {
+            --bg-color: #000000;
+            --nav-bg: #161617;
+            --text-primary: #f5f5f7;
+            --text-secondary: #86868b;
+            --card-bg: #161617;
+            --live-red: #ff3b30;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Icons", "Helvetica Neue", Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* Apple TV Style Navigation */
+        nav {
+            background-color: var(--nav-bg);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 40px;
+            height: 48px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        nav h1 {
+            color: var(--text-primary);
+            font-size: 16px;
+            font-weight: 600;
+            letter-spacing: -0.01em;
+        }
+
+        nav h1 span {
+            font-weight: 300;
+            color: var(--text-secondary);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 40px;
+        }
+
+        nav ul li {
+            font-size: 12px;
+            font-weight: 400;
+            color: var(--text-secondary);
+            cursor: pointer;
+        }
+
+        nav ul li.active {
+            color: var(--text-primary);
+        }
+
+        /* Header Layout with LIVE NOW badge */
+        header {
+            margin-top: 48px;
+            width: 100%;
+            padding: 20px 40px 0 40px;
+            background: #000;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            max-width: 1360px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .live-badge {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text-primary);
+            letter-spacing: 0.5px;
+        }
+
+        .red-dot {
+            width: 10px;
+            height: 10px;
+            background-color: var(--live-red);
+            border-radius: 50%;
+            display: inline-block;
+        }
+
+        .player-glass-container {
+            position: relative;
+            width: 100%;
+            height: 70vh;
+            max-height: 700px;
+            border-radius: 12px;
+            overflow: hidden;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+        }
+
+        header iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            object-fit: cover;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(180deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0) 50%, rgba(0,0,0,0.9) 100%);
+            pointer-events: none;
+            z-index: 2;
+        }
+
+        /* Category Layout */
+        .category {
+            padding: 40px 40px 60px 40px;
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 50px;
+            position: relative;
+            z-index: 3;
+        }
+
+        .category > div:not(.sponsoers) {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .anime-cartoon::before { content: "Animation & Cartoons"; font-size: 20px; font-weight: 600; letter-spacing: -0.01em; }
+        .movie::before { content: "Trending Movies"; font-size: 20px; font-weight: 600; letter-spacing: -0.01em; }
+        .tv-show::before { content: "Choose your favorite show"; font-size: 20px; font-weight: 600; letter-spacing: -0.01em; }
+
+        .box-of-the-show {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+        }
+
+        .box-of-the-show div {
+            background-color: var(--card-bg);
+            height: 350px;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        /* Partner / Sponsor Row */
+        .sponsoers {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 40px 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            gap: 20px;
+        }
+
+        .sponsore1 {
+            background-color: var(--card-bg);
+            flex: 1;
+            height: 60px;
+            border-radius: 8px;
+            opacity: 0.6;
+        }
+
+        /* Responsive Breakpoints */
+        @media (max-width: 1024px) {
+            .box-of-the-show {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                padding: 0 20px;
+            }
+            header {
+                padding: 15px 20px 0 20px;
+            }
+            .category {
+                padding: 20px;
+            }
+            .box-of-the-show {
+                grid-template-columns: 1fr;
+            }
+            .sponsoers {
+                flex-wrap: wrap;
+            }
+            .sponsore1 {
+                min-width: 45%;
+            }
+        }

@@ -3,7 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Models\Name;
-
+use App\Http\Controllers\Api;
 /*
 |--------------------------------------------------------------------------
 | Welcome / Login page
@@ -104,3 +104,21 @@ Route::post('/logout', function (Request $request) {
 
     return redirect('/');
 });
+
+
+Route::get('/sport', function () {
+    return view('auth.sport');
+});
+
+
+
+Route::get('/movie', function () {
+    return view('auth.movie');
+});
+
+
+Route::get('/ceo', function () {
+    return view('auth.ceo');
+});
+
+

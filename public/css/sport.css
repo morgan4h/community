@@ -1,0 +1,141 @@
+:root {
+            --bein-purple: #55156e;
+            --bein-dark: #121212;
+            --bein-card-bg: #1e1e1e;
+            --bein-gray: #888;
+            --bein-red: #e50914;
+            --text-light: #ffffff;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--bein-dark);
+            color: var(--text-light);
+            min-height: 100vh;
+        }
+
+        /* Navigation Bar Styles */
+        nav {
+            background-color: #0b0b0b;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 5%;
+            border-bottom: 2px solid var(--bein-purple);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav h1 {
+            color: var(--text-light);
+            font-size: 22px;
+            font-weight: 800;
+            letter-spacing: 1px;
+        }
+
+        nav h1 span {
+            color: var(--bein-purple);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        nav ul li {
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            color: var(--bein-gray);
+            transition: color 0.3s ease;
+        }
+
+        nav ul li:hover, nav ul li.active {
+            color: var(--text-light);
+        }
+
+        /* Video Player Header Styles */
+        header {
+            width: 100%;
+            background-color: #000;
+            display: flex;
+            justify-content: center;
+            padding: 20px 0;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+        }
+
+        header iframe {
+            width: 100%;
+            max-width: 1000px;
+            height: 562px; /* 16:9 Aspect Ratio */
+            max-height: 80vh;
+            border: none;
+            border-radius: 8px;
+            background: #000;
+        }
+
+        /* Channels Selection Grid Styles */
+        .channel {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 15px;
+            padding: 30px 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .channale {
+            background-color: var(--bein-card-bg);
+            padding: 20px 15px;
+            text-align: center;
+            border-radius: 6px;
+            font-weight: 700;
+            font-size: 14px;
+            letter-spacing: 0.5px;
+            cursor: pointer;
+            border: 1px solid #2a2a2a;
+            transition: all 0.2s ease-in-out;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .channale::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background-color: var(--bein-purple);
+            opacity: 0;
+            transition: opacity 0.2s ease;
+        }
+
+        .channale:hover {
+            transform: translateY(-3px);
+            background-color: #262626;
+            border-color: var(--bein-purple);
+        }
+
+        .channale:hover::before {
+            opacity: 1;
+        }
+
+        /* Responsive scaling */
+        @media (max-width: 768px) {
+            header iframe {
+                height: 300px;
+            }
+            nav ul {
+                gap: 15px;
+                font-size: 12px;
+            }
+        }
