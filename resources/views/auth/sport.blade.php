@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TMK SPORT - beIN CONNECT Style</title>
-        <link rel="stylesheet" href="{{ asset('css/sport.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/sport.css') }}">
 </head>
 <body>
     <nav>
@@ -12,25 +12,42 @@
         <ul>
             <li class="active">LIVE</li>
             <li>Channel's</li>
-            <li>TMK MOVIE</li>
+            <li><a href="/movie" style="color:inherit; text-decoration:none;">TMK MOVIE</a></li>
         </ul>
     </nav>
     <header>
+        <!-- Player iframe: Loads the first sport channel link or fallback -->
         <iframe 
-            src="https://new.aflam4you.org//zremb472.php?vid=31&amp;aflam_s=1&amp;aflam_w=360&amp;aflam_h=250&amp;aflam_k=18311111" 
+            id="main-player"
+            src="{{ $sports->first()->api ?? 'https://new.aflam4you.org//zzremb472.php?vid=68&amp;aflam_s=1&amp;aflam_w=669&amp;aflam_h=595&amp;aflam_k=445454555' }}" 
             loading="lazy"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen"
-            webkitallowfullscreen="" mozallowfullscreen="" referrerpolicy="no-referrer-when-downgrade">
+            allow="fullscreen"
+            webkitallowfullscreen="" 
+            mozallowfullscreen="" 
+            referrerpolicy="no-referrer-when-downgrade">
         </iframe>
     </header>
+
     <div class="channel">
-        <div class="channale">BEIN SPORT 1</div>
-        <div class="channale">BEIN SPORT 2</div>
-        <div class="channale">BEIN SPORT 3</div>
-        <div class="channale">BEIN SPORT 4</div>
-        <div class="channale">BEIN SPORT 5</div>
-        <div class="channale">BEIN SPORT 6</div>
-        <div class="channale">BEIN SPORT Premium</div>
+        @forelse($sports as $item)
+            <div class="channale" onclick="playChannel('{{ $item->api }}')">
+                {{ $item->name }}
+            </div>
+        @empty
+            <div class="channale">No channels available</div>
+        @endforelse
     </div>
+
+    <!-- Inline JavaScript to switch channel stream -->
+    <script>
+        function playChannel(embedUrl) {
+            const player = document.getElementById('main-player');
+            if (player && embedUrl) {
+                player.src = embedUrl;
+                // Scroll back to player smoothly
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+        }
+    </script>
 </body>
 </html>
