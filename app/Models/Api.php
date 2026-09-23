@@ -9,6 +9,9 @@ class Api extends Model
 {
     use HasFactory;
 
+    // Add this line to disable automatic timestamps
+    public $timestamps = false;
+
     protected $fillable = [
         'name',
         'api',

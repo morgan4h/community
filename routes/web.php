@@ -2,14 +2,12 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use Illuminate\Support\Facades\DB;
 use App\Models\Name;
-use App\Models\User;
 use App\Models\Api;
 
 /*
 |--------------------------------------------------------------------------
-| Welcome / Login page
+| Authentication & Welcome Routes
 |--------------------------------------------------------------------------
 */
 
@@ -19,13 +17,6 @@ Route::get('/', function (Request $request) {
     }
     return view('welcome');
 });
-
-
-/*
-|--------------------------------------------------------------------------
-| Login
-|--------------------------------------------------------------------------
-*/
 
 Route::post('/name', function (Request $request) {
     if ($request->session()->has('user_id')) {
@@ -50,67 +41,78 @@ Route::post('/name', function (Request $request) {
     return redirect('/home');
 });
 
+Route::post('/logout', function (Request $request) {
+    $request->session()->forget('user_id');
+    $request->session()->regenerateToken();
+    return redirect('/');
+});
 
 /*
 |--------------------------------------------------------------------------
-| Views
+| Views / Pages
 |--------------------------------------------------------------------------
 */
 
 Route::get('/home', function (Request $request) {
     $user = Name::find($request->session()->get('user_id'));
-    $users = User::all();
-    $apis = Api::all();
-
     return view('auth.home', [
         'user'  => $user,
-        'users' => $users,
-        'apis'  => $apis,
+        'users' => Name::all(),
+        'apis'  => Api::all(),
     ]);
 });
 
 Route::get('/sport', function () {
     return view('auth.sport', [
-        'users' => User::all(),
-        'apis'  => Api::all(),
+        'users'  => Name::all(),
+        'sports' => Api::where('category', 'sport')->get(),
     ]);
 });
 
 Route::get('/movie', function () {
     return view('auth.movie', [
-        'users' => User::all(),
-        'apis'  => Api::all(),
+        'users'  => Name::all(),
+        'movies' => Api::where('category', 'movie')->get(),
     ]);
 });
 
 Route::get('/ceo', function () {
     return view('auth.ceo', [
-        'users' => User::all(),
+        'users' => Name::all(),
         'apis'  => Api::all(),
     ]);
 });
 
-
 /*
 |--------------------------------------------------------------------------
-| User Management Endpoints
+| Name Management Endpoints (With Editable Timestamps)
 |--------------------------------------------------------------------------
 */
 
 Route::put('/users/{id}', function (Request $request, $id) {
     try {
         $validated = $request->validate([
-            'name'     => 'required|string|max:255',
-            'is_admin' => 'required|integer|in:0,1',
+            'name'       => 'required|string|max:255',
+            'created_at' => 'nullable|date',
+            'updated_at' => 'nullable|date',
         ]);
 
-        $user = User::findOrFail($id);
-        $user->update($validated);
+        $user = Name::findOrFail($id);
+        $user->name = $validated['name'];
+
+        if (!empty($validated['created_at'])) {
+            $user->created_at = $validated['created_at'];
+        }
+        if (!empty($validated['updated_at'])) {
+            $user->updated_at = $validated['updated_at'];
+        }
+
+        $user->save();
 
         if ($request->wantsJson()) {
             return response()->json(['status' => true, 'data' => $user], 200);
         }
-        return back()->with('success', 'User updated successfully!');
+        return back()->with('success', 'Name and timestamps updated successfully!');
     } catch (\Throwable $e) {
         if ($request->wantsJson()) {
             return response()->json(['status' => false, 'error_details' => $e->getMessage()], 500);
@@ -121,13 +123,13 @@ Route::put('/users/{id}', function (Request $request, $id) {
 
 Route::delete('/users/{id}', function (Request $request, $id) {
     try {
-        $user = User::findOrFail($id);
+        $user = Name::findOrFail($id);
         $user->delete();
 
         if ($request->wantsJson()) {
-            return response()->json(['status' => true, 'message' => 'User deleted successfully'], 200);
+            return response()->json(['status' => true, 'message' => 'Record deleted successfully'], 200);
         }
-        return back()->with('success', 'User deleted successfully!');
+        return back()->with('success', 'Record deleted successfully!');
     } catch (\Throwable $e) {
         if ($request->wantsJson()) {
             return response()->json(['status' => false, 'error_details' => $e->getMessage()], 500);
@@ -136,10 +138,9 @@ Route::delete('/users/{id}', function (Request $request, $id) {
     }
 });
 
-
 /*
 |--------------------------------------------------------------------------
-| API / Links Endpoints (With Category Support)
+| API / Links Endpoints (With Editable Timestamps)
 |--------------------------------------------------------------------------
 */
 
@@ -189,18 +190,31 @@ Route::post('/apis', function (Request $request) {
 Route::put('/apis/{id}', function (Request $request, $id) {
     try {
         $validated = $request->validate([
-            'name'     => 'required|string|max:255',
-            'api'      => 'required|string',
-            'category' => 'nullable|string|max:255',
+            'name'       => 'required|string|max:255',
+            'api'        => 'required|string',
+            'category'   => 'nullable|string|max:255',
+            'created_at' => 'nullable|date',
+            'updated_at' => 'nullable|date',
         ]);
 
         $api = Api::findOrFail($id);
-        $api->update($validated);
+        $api->name = $validated['name'];
+        $api->api = $validated['api'];
+        $api->category = $validated['category'] ?? null;
+
+        if (!empty($validated['created_at'])) {
+            $api->created_at = $validated['created_at'];
+        }
+        if (!empty($validated['updated_at'])) {
+            $api->updated_at = $validated['updated_at'];
+        }
+
+        $api->save();
 
         if ($request->wantsJson()) {
             return response()->json(['status' => true, 'data' => $api], 200);
         }
-        return back()->with('success', 'API updated successfully!');
+        return back()->with('success', 'API and timestamps updated successfully!');
     } catch (\Throwable $e) {
         if ($request->wantsJson()) {
             return response()->json(['status' => false, 'error_details' => $e->getMessage()], 500);
@@ -224,39 +238,4 @@ Route::delete('/apis/{id}', function (Request $request, $id) {
         }
         return back()->with('error', $e->getMessage());
     }
-});
-
-
-/*
-|--------------------------------------------------------------------------
-| Logout
-|--------------------------------------------------------------------------
-*/
-
-Route::post('/logout', function (Request $request) {
-    $request->session()->forget('user_id');
-    $request->session()->regenerateToken();
-    return redirect('/');
-});
-
-
-
-Route::get('/movie', function () {
-    // Fetches items where category = 'movie' using your existing Api model
-    $movies = Api::where('categoryes', 'movie')->get();
-
-    return view('auth.movie', [
-        'users'  => User::all(),
-        'movies' => $movies,
-    ]);
-});
-
-Route::get('/sport', function () {
-    // Fetches items where category = 'sport' using your Api model
-    $sports = Api::where('categoryes', 'sport')->get();
-
-    return view('auth.sport', [
-        'users'  => User::all(),
-        'sports' => $sports,
-    ]);
 });
