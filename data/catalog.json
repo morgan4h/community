@@ -1,0 +1,57 @@
+[
+  {
+    "id": "midnight-run",
+    "title": "Midnight Run",
+    "year": 2024,
+    "genre": "Adventure · 1h 48m",
+    "description": "A night drive turns into an unexpected journey across a city that never sleeps.",
+    "image": "https://images.unsplash.com/photo-1519608487953-e999c86e7455?auto=format&fit=crop&w=900&q=80",
+    "accent": "#355d9a",
+    "embed": "https://down.vidtube.one/embed-cn5ccb5vwa6a.html"
+  },
+  {
+    "id": "blue-hour",
+    "title": "The Blue Hour",
+    "year": 2023,
+    "genre": "Drama · 1h 36m",
+    "description": "Two old friends find their way back to each other on one quiet summer evening.",
+    "image": "https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=900&q=80",
+    "accent": "#456d9d"
+  },
+  {
+    "id": "orbit",
+    "title": "Orbit: First Light",
+    "year": 2025,
+    "genre": "Sci-fi · 2h 04m",
+    "description": "A small crew sets out to answer a signal from the edge of the known universe.",
+    "image": "https://images.unsplash.com/photo-1462331940025-496dfbfc7564?auto=format&fit=crop&w=900&q=80",
+    "accent": "#4346a0"
+  },
+  {
+    "id": "wild-coast",
+    "title": "Wild Coast",
+    "year": 2022,
+    "genre": "Documentary · 52m",
+    "description": "A beautiful look at the wildlife and wild places found along a rugged coastline.",
+    "image": "https://images.unsplash.com/photo-1518837695005-2083093ee35b?auto=format&fit=crop&w=900&q=80",
+    "accent": "#317a88"
+  },
+  {
+    "id": "afterglow",
+    "title": "Afterglow",
+    "year": 2024,
+    "genre": "Romance · 1h 42m",
+    "description": "A chance meeting, a missed train, and one more reason to stay a little longer.",
+    "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=900&q=80",
+    "accent": "#8a5579"
+  },
+  {
+    "id": "summit",
+    "title": "The Summit",
+    "year": 2021,
+    "genre": "Adventure · 1h 57m",
+    "description": "A team of climbers discovers that the hardest part of any climb is reaching it together.",
+    "image": "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=900&q=80",
+    "accent": "#526b80"
+  }
+]

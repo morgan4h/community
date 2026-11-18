@@ -1,0 +1,26 @@
+[
+    {
+        "id": "dd329cba0412bfce4a9b651193e135c3",
+        "name": "API User",
+        "email": "api@example.com",
+        "passwordHash": "$2y$12$14ZqTe3AumAcjsvCBOhxHOsrBMVj/K9rhmyGp7KufdNuDAOc9P97G",
+        "createdAt": "2026-11-18T21:15:20+00:00",
+        "lastLoginAt": "2026-11-18T21:15:33+00:00"
+    },
+    {
+        "id": "0f274311add1e13e19c2d049945b8256",
+        "name": "ahmed",
+        "email": "ahmed@4h.com",
+        "passwordHash": "$2y$12$JW1G7kHQAQrSzqjNt23uGu8UEZtMiqWKPYh/uLBndzQBp0iRN.fPW",
+        "createdAt": "2026-11-18T21:18:44+00:00",
+        "lastLoginAt": "2026-11-18T21:19:30+00:00"
+    },
+    {
+        "id": "ea5f43c28fa3b803f6dfaf96fd023785",
+        "name": "jhoon",
+        "email": "jhone@jho.com",
+        "passwordHash": "$2y$12$.MJGnheHLmZUAL8NeQAOo.W1Sskq1ZHNPUemwvxFNYrgUtBTPztE6",
+        "createdAt": "2026-11-18T21:49:38+00:00",
+        "lastLoginAt": null
+    }
+]
